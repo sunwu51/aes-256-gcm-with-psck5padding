@@ -1,0 +1,16 @@
+[package]
+name = "aes-256-gcm-with-psck5padding"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+aes-gcm = "0.10.2"
+base64 = "0.21.4"
+wasm-bindgen = "0.2.87"
+getrandom = { version = "0.2", features = ["js"] }
+
