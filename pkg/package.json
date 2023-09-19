@@ -6,9 +6,6 @@
     "aes_256_gcm_with_psck5padding.js",
     "aes_256_gcm_with_psck5padding.d.ts"
   ],
-  "module": "aes_256_gcm_with_psck5padding.js",
-  "types": "aes_256_gcm_with_psck5padding.d.ts",
-  "sideEffects": [
-    "./snippets/*"
-  ]
+  "browser": "aes_256_gcm_with_psck5padding.js",
+  "types": "aes_256_gcm_with_psck5padding.d.ts"
 }

@@ -6,24 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <script type="module">                                                    
-        import init, { aes_256_gcm_with_psck5padding_encrypt, aes_256_gcm_with_psck5padding_decrypt } from "./pkg/aes_256_gcm_with_psck5padding.js";    
-        init().then(() => {
-          window.encrypt = aes_256_gcm_with_psck5padding_encrypt;
-          window.decrypt = aes_256_gcm_with_psck5padding_decrypt;
-        });
-    </script> 
+    <script src="./pkg/aes_256_gcm_with_psck5padding.js"></script> 
     <script>
-        // use the function, after inited
-        var key = '12345678901234567890123456789012'; // len should be 32
-        setTimeout(() => {
-            if (encrypt) {
-                console.log(encrypt(key, '123'))
-            }
-            if (decrypt) {
-                console.log(decrypt(key, encrypt(key, "123")))
-            }
-        }, 3000)
+        (async function main() {
+            // 加载wasm
+            await wasm_bindgen();
+            var key = '12345678901234567890123456789012';
+            let encrypt = wasm_bindgen.aes_256_gcm_with_psck5padding_encrypt;
+            let decrypt = wasm_bindgen.aes_256_gcm_with_psck5padding_decrypt;
+            console.log(encrypt(key, '123'))
+            console.log(decrypt(key, encrypt(key, "123")))
+
+        }) ();
     </script>
 </body>
 </html>
